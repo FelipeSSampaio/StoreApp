@@ -1,5 +1,5 @@
 # StoreApp
-Projeto web usando Spring Boot, Maven e Thymeleaf
+Projeto web usando Spring Boot, Maven, ProjectLombok e Thymeleaf
 
 ----------------------
 PROBLEMAS ENFRENTADOS
