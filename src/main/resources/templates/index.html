@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<H3><a href="/cadastrarVestuario">Cadastrar Vestuário</a></H3>
+	
+	<div th:each="vestuario : ${vestuarios}">
+		<div class="row">
+			<p><span th:text="${vestuario.nome}"></span></p>
+			<p><span th:text="${vestuario.tamanho}"></span></p>
+			<p><span th:text="${vestuario.cor}"></span></p>
+			<p><span th:text="${vestuario.tipo}"></span></p>
+		</div>
+	</div>
+</body>
+</html>
