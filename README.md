@@ -1,5 +1,10 @@
 # StoreApp
-Projeto web usando Spring Boot, Maven, ProjectLombok e Thymeleaf
+Projeto web usando Spring Boot, Maven, ProjectLombok,, Materialyze e Thymeleaf
+
+----------------------
+PRIMEIROS PASSOS
+----------------------
+1 - Maven
 
 ----------------------
 PROBLEMAS ENFRENTADOS
@@ -16,3 +21,5 @@ PROBLEMAS ENFRENTADOS
   </properties>
   ...
   ```
+2 - ProjectLombok
+  É preciso ter atenção com essa biblioteca porque é necessário instalar a mesma no eclipse, caso contrário seus getters e setters não serão encontrados, assim como o toString() e demais métodos comuns de um modelo, e simplesmente não darão erro.
