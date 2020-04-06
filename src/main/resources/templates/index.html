@@ -2,50 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>StoreApp</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 
-	<div class="row"></div>
-
-	<div class="row container">
-		<a href="/cadastrarVestuario" class="waves-effect waves-light btn">
-			<i class="material-icons left">add_circle_outline</i>
-			Cadastrar Vestuário
-		</a>
-	</div>
-	
-	<div class="row container">
+	<div class="row container center">
 		<div class="card-panel blue lighten-2 white-text z-depth-3">
-			<h4>Lista Vestuários</h4>
+			<h3>StoreApp</h3>
 		</div>
 	</div>
-
 	
-	
-	<div class="row container">
-		<table>
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Tamanho</th>
-					<th>Cor</th>
-					<th>Tipo</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="vestuario : ${vestuarios}">
-					<td><span th:text="${vestuario.nome}"></span></td>
-					<td><span th:text="${vestuario.tamanho}"></span></td>
-					<td><span th:text="${vestuario.cor}"></span></td>
-					<td><span th:text="${vestuario.tipo}"></span></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<div class="collection container">
+		<a href="/cadastrarVestuario" class="collection-item">Cadastrar Vestuário</a>
+		<a href="/listarVestuario" class="collection-item">Listar Vestuário</a>
+    </div>
 	
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	
