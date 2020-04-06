@@ -32,6 +32,7 @@
 					<th>Tamanho</th>
 					<th>Cor</th>
 					<th>Tipo</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -40,6 +41,14 @@
 					<td><span th:text="${vestuario.tamanho}"></span></td>
 					<td><span th:text="${vestuario.cor}"></span></td>
 					<td><span th:text="${vestuario.tipo}"></span></td>
+					<td class="center">
+						<a th:href="${(#mvc.url('VC#editarVestuario').arg(0, vestuario.codigo)).build()}" class="orange-text text-darken-1" title="editar">
+							<i class="material-icons">edit</i>
+						</a>
+						<a th:href="${(#mvc.url('VC#excluirVestuario').arg(0, vestuario.codigo)).build()}" class="red-text text-darken-1" title="excluir">
+							<i class="material-icons">delete</i>
+						</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

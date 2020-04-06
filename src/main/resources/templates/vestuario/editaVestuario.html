@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>StoreApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>        
+</head>
+<body>
+	
+	<div class="row"></div>
+
+	<div class="row container">
+		<a href="/" class="waves-effect waves-light btn">
+			<i class="material-icons left">menu</i>
+			Menu
+		</a>
+	</div>
+	
+	<div class="row container">
+		<div class="card-panel blue lighten-2 white-text z-depth-3">
+			<h4>Edição de vestuário</h4>
+		</div>
+	</div>
+	
+	<div class="row container">
+		<form method="post">
+		
+				<div class="col s12">
+					<div class="input-field col s12">
+						<input type="text" id="nome" th:value="${vestuario.nome}" name="nome" required="required" autofocus="autofocus" autocomplete="off">
+						<label for="nome">Nome</label>
+		      		</div>
+				</div>
+			
+				<div class="col s12">
+					<div class="input-field col s12">
+						<input type="text" id="tamanho" th:value="${vestuario.tamanho}" name="tamanho" required="required" autocomplete="off">
+						<label for="tamanho">Tamanho</label>
+		      		</div>
+				</div>
+				
+				<div class="col s12">
+					<div class="input-field col s12">
+						<input type="text" id="cor" th:value="${vestuario.cor}" name="cor" required="required" autocomplete="off">
+						<label for="cor" class="">Cor</label>
+		      		</div>
+				</div>
+			
+				<div class="col s12">
+					<div class="input-field col s12">
+						<input type="text" id="tipo" th:value="${vestuario.tipo}" name="tipo" autocomplete="off">
+						<label for="tipo">Tipo</label>
+		      		</div>
+				</div>
+			
+				<div class="col s12">
+					<button type="submit" class="waves-effect waves-light btn right">Editar</button>
+				</div>
+				
+			<script type="text/javascript" src="js/materialize.min.js"></script>
+		</form>
+	</div>
+</body>
+</html>

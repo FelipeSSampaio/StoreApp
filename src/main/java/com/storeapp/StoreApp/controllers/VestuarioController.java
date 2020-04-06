@@ -39,4 +39,32 @@ public class VestuarioController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(value="/excluirVestuario/{codigo}")
+	public String excluirVestuario(@PathVariable("codigo") long codigo) {
+		
+		Vestuario vestuario = vestuarioREPO.findByCodigo(codigo);
+		vestuarioREPO.delete(vestuario);
+		
+		return "redirect:/listarVestuario";
+	}
+	
+	@RequestMapping(value="/editaVestuario/{codigo}")
+	public ModelAndView editarVestuario(@PathVariable("codigo") long codigo) {
+		ModelAndView mv = new ModelAndView("vestuario/editaVestuario");
+		Vestuario vestuario = vestuarioREPO.findByCodigo(codigo);
+		mv.addObject("vestuario", vestuario);
+		
+		return mv;
+	}
+	
+	@RequestMapping(value="/editaVestuario/{codigo}", method=RequestMethod.POST)
+	public String editarVestuarioEscolhido(Vestuario vestuario) {
+		
+		System.out.println(vestuario.toString());
+		
+		vestuarioREPO.save(vestuario);
+		
+		return "redirect:/listarVestuario";
+	}
 }
