@@ -67,6 +67,12 @@
 		    <scope>compile</scope>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/materialize -->
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>materialize</artifactId>
+		    <version>0.100.2</version>
+		</dependency>
 				
 	</dependencies>
 
