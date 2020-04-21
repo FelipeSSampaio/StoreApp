@@ -25,6 +25,11 @@
 	</div>
 	
 	<div class="row container">
+	
+		<div class="col s12 input-field" th:if="${mensagem != ''}">
+			<span th:text="${mensagem}" class="red-text"></span>
+		</div>
+	
 		<form method="post">
 		
 				<div class="col s12">

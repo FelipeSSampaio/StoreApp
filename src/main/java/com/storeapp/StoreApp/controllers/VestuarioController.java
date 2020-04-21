@@ -10,11 +10,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.storeapp.StoreApp.models.Vestuario;
 import com.storeapp.StoreApp.repository.VestuarioRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class VestuarioController {
 
 	@Autowired
 	private VestuarioRepository vestuarioREPO;
+	
+	private String mensagem = "";
 	
 	@RequestMapping(value="/cadastrarVestuario", method=RequestMethod.GET)
 	public String redirecionaCadastrar() {
@@ -22,13 +27,17 @@ public class VestuarioController {
 	}
 	
 	@RequestMapping(value="/cadastrarVestuario", method=RequestMethod.POST)
-	public String cadastrar(Vestuario vestuario) {
-		
-		System.out.println(vestuario.toString());
+	public ModelAndView cadastrar(Vestuario vestuario) {
+		ModelAndView mv = new ModelAndView("vestuario/cadastroVestuario");
+				
+		log.debug(vestuario.toString());
 		
 		vestuarioREPO.save(vestuario);
 		
-		return "redirect:/cadastrarVestuario";
+		setMensagem("Vestuário cadastrado!");
+		mv.addObject("mensagem", mensagem);
+		
+		return mv;
 	}
 	
 	@RequestMapping(value="/listarVestuario")
@@ -61,10 +70,18 @@ public class VestuarioController {
 	@RequestMapping(value="/editaVestuario/{codigo}", method=RequestMethod.POST)
 	public String editarVestuarioEscolhido(Vestuario vestuario) {
 		
-		System.out.println(vestuario.toString());
+		log.debug(vestuario.toString());
 		
 		vestuarioREPO.save(vestuario);
 		
 		return "redirect:/listarVestuario";
+	}
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
 }
