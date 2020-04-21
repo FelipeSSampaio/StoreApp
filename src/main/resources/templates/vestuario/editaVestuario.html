@@ -16,6 +16,10 @@
 			<i class="material-icons left">menu</i>
 			Menu
 		</a>
+		<a href="/listarVestuario" class="waves-effect waves-light btn">
+			<i class="material-icons left">menu</i>
+			Listar
+		</a>
 	</div>
 	
 	<div class="row container">
@@ -35,13 +39,17 @@
 				</div>
 			
 				<div class="col s12">
-					<div class="input-field col s12">
-						<input type="text" id="tamanho" th:value="${vestuario.tamanho}" name="tamanho" required="required" autocomplete="off">
+					<div class="col s12">
 						<label for="tamanho">Tamanho</label>
-		      		</div>
+						<select id="tamanho" name="tamanho" class="browser-default">
+							<option th:each="enumTamanho : ${T(com.storeapp.StoreApp.enums.EnumTamanhoVestuario).values()}" 
+									th:value="${enumTamanho}" th:text="${enumTamanho.getTamanhoCode()}"
+									th:selected="${vestuario.tamanho}"></option>
+						</select>
+					</div>
 				</div>
 				
-				<div class="col s12">
+				<div class="input-field col s12 pt-1">
 					<div class="input-field col s12">
 						<input type="text" id="cor" th:value="${vestuario.cor}" name="cor" required="required" autocomplete="off">
 						<label for="cor" class="">Cor</label>
