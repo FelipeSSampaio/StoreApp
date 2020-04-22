@@ -20,6 +20,7 @@ public class VestuarioController {
 	private VestuarioRepository vestuarioREPO;
 	
 	private String mensagem = "";
+	private String mensagemErro = "";
 	
 	@RequestMapping(value="/cadastrarVestuario", method=RequestMethod.GET)
 	public String redirecionaCadastrar() {
@@ -30,12 +31,28 @@ public class VestuarioController {
 	public ModelAndView cadastrar(Vestuario vestuario) {
 		ModelAndView mv = new ModelAndView("vestuario/cadastroVestuario");
 				
-		log.debug(vestuario.toString());
+		log.info(vestuario.toString());
 		
-		vestuarioREPO.save(vestuario);
-		
-		setMensagem("Vestuário cadastrado!");
-		mv.addObject("mensagem", mensagem);
+		try {
+			
+			vestuarioREPO.save(vestuario);
+			
+			StringBuffer mensagem = new StringBuffer();
+			mensagem.append("</br><i class=\"material-icons \">check_circle</i>");
+			mensagem.append("</br>Vestuário cadastrado!</br></br>");
+			
+			setMensagem(mensagem.toString());
+			mv.addObject("mensagem", mensagem);
+		}
+		catch(Exception e) {
+			StringBuffer mensagemErro = new StringBuffer();
+			mensagemErro.append("</br><i class=\"material-icons \">error_outline</i>");
+			mensagemErro.append("</br>Ocorreu um erro ao tentar cadastrar o vestuário!");
+			mensagemErro.append("</br>Tente novamente .. </br></br>");
+			
+			setMensagemErro(mensagemErro.toString());
+			mv.addObject("mensagemErro", mensagemErro);
+		}
 		
 		return mv;
 	}
@@ -70,7 +87,7 @@ public class VestuarioController {
 	@RequestMapping(value="/editaVestuario/{codigo}", method=RequestMethod.POST)
 	public String editarVestuarioEscolhido(Vestuario vestuario) {
 		
-		log.debug(vestuario.toString());
+		log.info(vestuario.toString());
 		
 		vestuarioREPO.save(vestuario);
 		
@@ -84,4 +101,13 @@ public class VestuarioController {
 	public void setMensagem(String mensagem) {
 		this.mensagem = mensagem;
 	}
+
+	public String getMensagemErro() {
+		return mensagemErro;
+	}
+
+	public void setMensagemErro(String mensagemErro) {
+		this.mensagemErro = mensagemErro;
+	}
+
 }
