@@ -1,5 +1,11 @@
 # StoreApp
-Projeto web usando Spring Boot, Maven, Project Lombok, Materialize e Thymeleaf
+Projeto web usando: 
+
+- [X] Spring Boot
+- [X] Maven
+- [X] Project Lombok
+- [X] Materialize
+- [X] Thymeleaf
 
 ----------------------
 PASSOS NECESSÁRIOS
