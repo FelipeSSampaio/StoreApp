@@ -49,10 +49,10 @@
 		      		</div>
 				</div>
 			
-				<div class="col s12">
+				<div class="col s6">
 					<div class="col s12">
 						<label for="tamanho">Tamanho</label>
-						<select id="tamanho" name="tamanho" class="browser-default">
+						<select id="tamanho" name="tamanho" class="browser-default" required="required">
 							<option value="" disabled selected>Escolha sua opção</option>
 							<option th:each="enumTamanho : ${T(com.storeapp.StoreApp.enums.EnumTamanhoVestuario).values()}" 
 									th:value="${enumTamanho}" th:text="${enumTamanho.getTamanhoCode()}"></option>
@@ -60,10 +60,14 @@
 					</div>
 				</div>
 				
-				<div class="col s12">
-					<div class="input-field col s12">
-						<input type="text" id="cor" value="" name="cor" required="required" autocomplete="off">
+				<div class="col s6">
+					<div class="col s12">
 						<label for="cor" class="">Cor</label>
+						<select id="cor" name="cor" class="browser-default s6" required="required">
+							<option value="" disabled selected>Escolha sua opção</option>
+							<option th:each="enumCor : ${T(com.storeapp.StoreApp.enums.EnumCorVestuario).values()}" 
+									th:value="${enumCor}" th:text="${enumCor.getCorCode()}"></option>
+						</select>
 		      		</div>
 				</div>
 			
