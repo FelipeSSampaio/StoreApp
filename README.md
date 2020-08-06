@@ -46,6 +46,7 @@ adapter.setGenerateDdl(true);
 Ela indica que serão adicionadas/atualizadas estruturas no banco, mas não serão excluídas as já existentes.
 
 3 - Project Lombok
+
   Para que essa bblioteca funcione no eclipse será preciso instalar a mesma.
   Para isso basta procurar o jar da lib no repositório do Maven (.m2) e executar ele com um duplo clique. O endereço deve ser algo como: '\.m2\repository\org\projectlombok\lombok\1.18.12'
   Ao executar a lib, busque o local de instalação do seu eclipse e siga com a instalação.
@@ -67,7 +68,7 @@ PROBLEMAS ENFRENTADOS
   ```
   ...
   <properties>
-		<java.version>1.8</java.version>
+    <java.version>1.8</java.version>
     <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
   </properties>
   ...
