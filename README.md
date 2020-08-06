@@ -62,6 +62,7 @@ http://localhost:8080/
 PROBLEMAS ENFRENTADOS
 ----------------------
 1 - Eclipse
+  
   Pode ser que o eclipse apresente um erro de configuração do maven logo após a importação do código criado no Spring Initializr.
   Para corrigir esse erro basta adicionar o código abaixo dentro da tag properties, onde já deve ter uma indicação da versão do java;
   
@@ -74,4 +75,5 @@ PROBLEMAS ENFRENTADOS
   ...
   ```
 2 - ProjectLombok
+  
   É preciso ter atenção com essa biblioteca porque é necessário instalar a mesma no eclipse, caso contrário seus getters e setters não serão encontrados, assim como o toString() e demais métodos comuns de um modelo, e simplesmente não darão erro.
